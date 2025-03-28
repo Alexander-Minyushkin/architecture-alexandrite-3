@@ -1,0 +1,11 @@
+
+@startuml
+CRM_API -> Cache: MANUFACTURING_APPROVED, order_id, order_metadata
+CRM_API -> MES_db: MANUFACTURING_APPROVED, order_id
+
+MES_order <- Cache: Read all order_id and order_metadata
+MES_order -> Cache: on MANUFACTURING_STARTED delete order_id
+MES_order -> MES_db: MANUFACTURING_STARTED, order_id 
+
+
+@enduml
