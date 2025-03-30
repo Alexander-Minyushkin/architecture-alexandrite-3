@@ -1,0 +1,7 @@
+
+@startuml
+MES_db -> Cache: order_id, order_metadata
+
+MES_order <- Cache: order_id, order_metadata
+
+@enduml
